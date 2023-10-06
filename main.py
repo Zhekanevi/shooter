@@ -59,7 +59,7 @@ class Player(GameSprite):
             self.rect.x += self.speed
 
     def fire(self):
-        bullet = Bullet('bullet.png', self.rect.centerx, self.rect.top, 15, 20, 25 )
+        bullet = Bullet('bullet.png', self.rect.centerx, self.rect.top, 15, 20, 20 )
         bullets.add(bullet)
 
 # функції для оновлення спрайтів
@@ -90,17 +90,17 @@ class Bullet(GameSprite):
 
     
 # створюємо гравців
-player = Player("rocket.png", W/2, H-100, 80, 100, 15)
+player = Player("rocket.png", W/2, H-100, 80, 100, 8)
 monsters = sprite.Group()
 bullets = sprite.Group()
 asteroids = sprite.Group()
 # створюємо цикл для того щоб було багато ворогів
 for i in range(5):
-    monster = Enemy("ufo.png", randint(0, W-80), randint(-50, 0), 80, 50, randint(3, 4))
+    monster = Enemy("ufo.png", randint(0, W-80), randint(-50, 0), 80, 50, randint(2, 3))
     monsters.add(monster)
 
 for i in range(3):
-    asteroid = Asteroid("asteroid.png", randint(0, W-80), randint(-50, 0), 80, 50, randint(3, 4))
+    asteroid = Asteroid("asteroid.png", randint(0, W-80), randint(-50, 0), 80, 50, randint(2, 3))
     asteroids.add(asteroid)
 finish = False
 # ігровий цикл
