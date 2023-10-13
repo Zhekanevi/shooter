@@ -90,13 +90,13 @@ class Bullet(GameSprite):
 
     
 # створюємо гравців
-player = Player("rocket.png", W/2, H-100, 80, 100, 8)
+player = Player("mario3.png", W/2, H-100, 80, 100, 8)
 monsters = sprite.Group()
 bullets = sprite.Group()
 asteroids = sprite.Group()
 # створюємо цикл для того щоб було багато ворогів
 for i in range(5):
-    monster = Enemy("ufo.png", randint(0, W-80), randint(-50, 0), 80, 50, randint(2, 3))
+    monster = Enemy("grib1.png", randint(0, W-80), randint(-50, 0), 80, 50, randint(2, 3))
     monsters.add(monster)
 
 for i in range(3):
@@ -174,7 +174,7 @@ while game:
             monsters.add(monster)
             killed += 1
 # перевірка виграшу
-        if killed > 50:
+        if killed > 15:
             win = font1.render("Ти виграв!", True, (0, 255, 0))
             window.blit(win, (W/2-100, H/2))
             finish = True
